@@ -24,6 +24,7 @@ A Python script that uses the Google GenAI SDK and Pydantic to parse messy logis
 
 **What errors or issues I fixed:**
 * API Key Security: Removed the hardcoded API key and updated the code to read GEMINI_API_KEY from the source to prevent leaking my own API key on GitHub after I push it.
+* Minor inconsistencies in the output.
 
 **What I understand now:**
 * How to structure the output of AI models.
