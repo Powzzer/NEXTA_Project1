@@ -12,7 +12,7 @@ class DeliveryJob(BaseModel):
     Stop: str = Field(description="The letter or identifier of the site (e.g., A, B, C)")
     Item: str = Field(description="The name of the item being delivered or picked up")
     Quantity: str = Field(description="The quantity or amount (e.g., 3x, 2 boxes)")
-    Priority: str = Field(description="Must be exactly one of: 1-ASAP, 2-High, 3-Medium, 4-Low")
+    Priority: str = Field(description="Must be exactly one of: 1-Critical, 2-High, 3-Medium, 4-Low")
     When: str = Field(description="The timeframe mentioned in the text")
 
 class DeliveryPlan(BaseModel):
