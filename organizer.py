@@ -18,7 +18,6 @@ class DeliveryJob(BaseModel):
 class DeliveryPlan(BaseModel):
     jobs: list[DeliveryJob]
 
-# Input text (changing this text will dynamically change the output)
 messy_text = "3x pipes to site B asap; deliver gloves (2 boxes) + 1 helmet to A tomorrow am; URGENT cement to site D; pickup empty pallets from C; H needs 5 vests by end of day"
 
 # Call the model with structured JSON schema constraints
@@ -32,11 +31,9 @@ response = client.models.generate_content(
     ),
 )
 
-# Parse the valid JSON response directly into a Pandas DataFrame
 json_data = json.loads(response.text)
 df = pd.DataFrame(json_data["jobs"])
 
-# Sort by Priority so urgent jobs appear first
 df = df.sort_values(by="Priority")
 
 COLOR_MAP = {
@@ -46,8 +43,6 @@ COLOR_MAP = {
     "4-Low":      "\033[92m4-Low\033[0m"        # Green
 }
 
-# 3. Apply the colors to the Priority column
 df['Priority'] = df['Priority'].map(COLOR_MAP).fillna(df['Priority'])
 
-# Print the final formatted markdown table
 print(df.to_markdown(index=False))
