@@ -39,5 +39,15 @@ df = pd.DataFrame(json_data["jobs"])
 # Sort by Priority so urgent jobs appear first
 df = df.sort_values(by="Priority")
 
+COLOR_MAP = {
+    "1-Critical": "\033[91m1-Critical\033[0m", # Red
+    "2-High":     "\033[38;5;208m2-High\033[0m",     # True Orange    
+    "3-Medium":   "\033[33m3-Medium\033[0m",   # Yellow
+    "4-Low":      "\033[92m4-Low\033[0m"        # Green
+}
+
+# 3. Apply the colors to the Priority column
+df['Priority'] = df['Priority'].map(COLOR_MAP).fillna(df['Priority'])
+
 # Print the final formatted markdown table
 print(df.to_markdown(index=False))
