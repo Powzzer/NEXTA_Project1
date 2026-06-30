@@ -29,6 +29,7 @@ A Python script that uses the Google GenAI SDK and Pydantic to parse messy logis
 **What I understand now:**
 * How to structure the output of AI models.
 * How to link Google's Gemini inside VSCode and use it to process prompts.
+* The meaning of "temprature" with regards to LLMs.
 
 ---
 
