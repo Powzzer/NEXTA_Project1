@@ -28,7 +28,7 @@ A Python script that uses the Google GenAI SDK and Pydantic to parse messy logis
 
 **What I understand now:**
 * How to structure the output of AI models.
-* How to link Google's Gemmini inside VSCode and use it to process prompts.
+* How to link Google's Gemini inside VSCode and use it to process prompts.
 
 ---
 
